@@ -35,7 +35,7 @@ router.post('/run-script', async (ctx) => {
 
     // 安装模块
     for (let mod of modules) {
-      execSync(`npm install ${mod}`);
+      execSync(`yarn add ${mod}`);
     }
 
     // 创建沙箱环境
@@ -63,7 +63,7 @@ router.post('/run-script', async (ctx) => {
 
 app.use(router.routes()).use(router.allowedMethods());
 
-const port = 3000;
+const port = 3001;
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
